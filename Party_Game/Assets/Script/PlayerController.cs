@@ -10,15 +10,22 @@ public class PlayerController : MonoBehaviour
 
 	AudioSource audioSource;
 
+	public Text textObject;
+
 	Text winText;
 
+	public int maxScore = 10;
+
+	public int score { get { return currentScore; } }
+	int currentScore;
+
 	public AudioClip winSound;
-	public AudioClip loseSound;
 
 	void Start()
     {
-		winText = gameObject.GetComponent<Text>();
 		audioSource = GetComponent<AudioSource>();
+
+		currentScore = 0;
 	}
 
 	void Update()
@@ -43,5 +50,16 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	
+	public void ChangeScore(int amount)
+	{
+		currentScore = Mathf.Clamp(currentScore + amount, 0, maxScore);
+		Debug.Log(currentScore);
+
+		textObject.text = "You Win!";
+	}
+
+	public void PlaySound(AudioClip clip)
+	{
+		audioSource.PlayOneShot(winSound);
+	}
 }
