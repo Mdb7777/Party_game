@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestoryScript : MonoBehaviour
+public class DelayedPlay : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioSource backgroundMusic = gameObject.GetComponent<AudioSource>();
+        backgroundMusic.PlayDelayed(5);
     }
 
     // Update is called once per frame
