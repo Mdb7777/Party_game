@@ -27,11 +27,6 @@ public class Timer : MonoBehaviour
         timerText.text = "Timer: " + Mathf.Round(timer);
         yield return new WaitForSeconds(4f);
         timer += Time.deltaTime;
-
-        if(timer == 10)
-        {
-            timerText.text = "Timer: 10";
-            
-        }
+        
     }
 }

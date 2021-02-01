@@ -9,6 +9,7 @@ public class DelayedPlay : MonoBehaviour
     {
         AudioSource backgroundMusic = gameObject.GetComponent<AudioSource>();
         backgroundMusic.PlayDelayed(5);
+
     }
 
     // Update is called once per frame
